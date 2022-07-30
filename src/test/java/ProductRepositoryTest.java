@@ -29,7 +29,7 @@ public class ProductRepositoryTest {
     public void shouldSaveItems() {
 
 
-        Product[] expected = {item1, item2, item3, item4,item5};
+        Product[] expected = {item1, item2, item3, item4, item5};
         Product[] actual = repo.getItems();
         Assertions.assertArrayEquals(expected, actual);
 
@@ -38,7 +38,7 @@ public class ProductRepositoryTest {
     @Test
     public void shouldDelItem() {
 
-repo.removeById(item2.getId());
+        repo.removeById(item2.getId());
         Product[] expected = {item1, item3, item4, item5};
         Product[] actual = repo.getItems();
         Assertions.assertArrayEquals(expected, actual);

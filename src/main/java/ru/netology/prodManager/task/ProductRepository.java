@@ -1,7 +1,7 @@
 package ru.netology.prodManager.task;
 
 public class ProductRepository {
-private Product[]items=new Product[0];
+    private Product[] items = new Product[0];
 
     public void save(Product item) {
         Product[] tmp = new Product[items.length + 1];
@@ -23,7 +23,8 @@ private Product[]items=new Product[0];
         }
         items = tmp;
     }
-    public Product[] getItems(){
+
+    public Product[] getItems() {
         return items;
     }
 }
