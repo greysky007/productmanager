@@ -33,4 +33,18 @@ public class ProductManagerTest {
         Product[] actual = manager.searchBy("Басни");
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void shouldSearchOneItemByName() {
+
+        Product[] expected = {item5};
+        Product[] actual = manager.searchBy("Galaxy S");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void shouldSearchNothingItemByName() {
+
+        Product[] expected = {};
+        Product[] actual = manager.searchBy("Стихи");
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
