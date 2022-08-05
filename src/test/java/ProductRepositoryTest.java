@@ -1,10 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.netology.prodManager.task.Book;
-import ru.netology.prodManager.task.Product;
-import ru.netology.prodManager.task.ProductRepository;
-import ru.netology.prodManager.task.Smartphone;
+import ru.netology.prodManager.task.*;
 
 public class ProductRepositoryTest {
     ProductRepository repo = new ProductRepository();
@@ -36,12 +33,27 @@ public class ProductRepositoryTest {
     }
 
     @Test
+    public void shouldFindById() {
+
+        Product expected = item3;
+        Product actual = repo.findById(43);
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
     public void shouldDelItem() {
 
         repo.removeById(item2.getId());
         Product[] expected = {item1, item3, item4, item5};
         Product[] actual = repo.getItems();
         Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldRemoveItem() {
+
+
+        Assertions.assertThrows(NotFoundException.class, ()-> {repo.removeById(123);});
 
     }
 }

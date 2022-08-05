@@ -33,4 +33,5 @@ public class ProductManagerTest {
         Product[] actual = manager.searchBy("Басни");
         Assertions.assertArrayEquals(expected, actual);
     }
+
 }

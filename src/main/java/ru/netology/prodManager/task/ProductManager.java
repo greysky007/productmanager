@@ -14,6 +14,7 @@ public class ProductManager {
 
 
     public Product[] searchBy(String text) {
+
         Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукты
         for (Product product : repo.getItems()) {
             if (matches(product, text)) {
@@ -39,4 +40,6 @@ public class ProductManager {
             return false;
         }
     }
+
+
 }
